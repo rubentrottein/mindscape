@@ -58,7 +58,7 @@ export default function Archives() {
     })
   }
 
-  const archivedThemes = getArchivedThemes(themesData)
+  const archivedThemes = getArchivedThemes()
 
   return (
       <main className="max-w-3xl mx-auto p-6">
