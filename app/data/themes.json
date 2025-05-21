@@ -1,0 +1,38 @@
+[
+    {
+      "date": "2025-05-21",
+      "title": "École",
+      "instructions": "Une sensation, une scène, un moment d'enfance.",
+      "charLimit": 1200
+    },
+    {
+      "date": "2025-05-22",
+      "title": "Merci",
+      "instructions": "En une phrase ou une lettre, dis merci.",
+      "charLimit": 300
+    },
+    {
+      "date": "2025-05-23",
+      "title": "Tendresse",
+      "instructions": "Écris un souvenir tendre, même tout petit.",
+      "charLimit": 600
+    },
+    {
+      "date": "2025-05-24",
+      "title": "Colère",
+      "instructions": "Exprime une émotion vive, sans filtre.",
+      "charLimit": 800
+    },
+    {
+      "date": "2025-05-25",
+      "title": "Silence",
+      "instructions": "Ce que l’on n’a jamais dit. Ce que tu ne diras peut-être jamais.",
+      "charLimit": 1000
+    },
+    {
+      "date": "2025-05-26",
+      "title": "Transmission",
+      "instructions": "Qu’est-ce que tu veux transmettre ?",
+      "charLimit": 1500
+    }
+]
