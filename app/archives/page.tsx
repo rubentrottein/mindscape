@@ -4,9 +4,6 @@ import { useEffect, useState } from "react"
 import { getArchivedThemes } from "../lib/getArchivedThemes" // réutilise ton JSON
 import { themesData } from "../lib/ThemesData"
 import { messagesData } from "../lib/messagesData" // fichier JSON simulé pour les messages
-import Sidebar from "../sidebar";
-import Layout from "../layout";
-
 type Message = {
   pseudo: string
   content: string
