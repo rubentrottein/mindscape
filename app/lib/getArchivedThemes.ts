@@ -1,7 +1,7 @@
-import { themesData } from "./ThemesData"
+import themes from '../data/themes.json';
 
-export function getArchivedThemes(): typeof themesData {
+export function getArchivedThemes(): typeof themes {
   const today = new Date().toISOString().slice(0, 10)
   console.log("TODAY ISO = ", today)
-  return themesData.filter((theme) => theme.date < today)
+  return themes.filter((theme) => theme.date <= today)
 }

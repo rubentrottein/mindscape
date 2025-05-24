@@ -1,38 +1,86 @@
 [
-    {
-      "date": "2025-05-21",
-      "title": "École",
-      "instructions": "Une sensation, une scène, un moment d'enfance.",
-      "charLimit": 1200
-    },
-    {
-      "date": "2025-05-22",
-      "title": "Merci",
-      "instructions": "En une phrase ou une lettre, dis merci.",
-      "charLimit": 300
-    },
-    {
-      "date": "2025-05-23",
-      "title": "Tendresse",
-      "instructions": "Écris un souvenir tendre, même tout petit.",
-      "charLimit": 600
-    },
-    {
-      "date": "2025-05-24",
-      "title": "Colère",
-      "instructions": "Exprime une émotion vive, sans filtre.",
-      "charLimit": 800
-    },
-    {
-      "date": "2025-05-25",
-      "title": "Silence",
-      "instructions": "Ce que l’on n’a jamais dit. Ce que tu ne diras peut-être jamais.",
-      "charLimit": 1000
-    },
-    {
-      "date": "2025-05-26",
-      "title": "Transmission",
-      "instructions": "Qu’est-ce que tu veux transmettre ?",
-      "charLimit": 1500
-    }
+  {
+    "date": "2025-05-13",
+    "title": "Objet",
+    "instructions": "Décris un objet banal chargé de souvenirs.",
+    "charLimit": 400
+  },
+  {
+    "date": "2025-05-14",
+    "title": "Odeur",
+    "instructions": "Raconte une odeur qui te ramène à un souvenir fort.",
+    "charLimit": 300
+  },
+  {
+    "date": "2025-05-15",
+    "title": "Brume",
+    "instructions": "Une sensation floue, un moment nébuleux, un souvenir incertain.",
+    "charLimit": 500
+  },
+  {
+    "date": "2025-05-16",
+    "title": "Main",
+    "instructions": "Décris un geste, un contact, une main, réelle ou imaginaire.",
+    "charLimit": 600
+  },
+  {
+    "date": "2025-05-17",
+    "title": "Traces",
+    "instructions": "Ce que l’on laisse derrière soi — visible ou invisible.",
+    "charLimit": 700
+  },
+  {
+    "date": "2025-05-18",
+    "title": "Absence",
+    "instructions": "Exprime ce qui manque, sans forcément le nommer.",
+    "charLimit": 900
+  },
+  {
+    "date": "2025-05-19",
+    "title": "Cuisine",
+    "instructions": "Un souvenir, une scène, une recette liée à la cuisine.",
+    "charLimit": 1000
+  },
+  {
+    "date": "2025-05-20",
+    "title": "Rituel",
+    "instructions": "Décris une habitude, un rituel, ancien ou actuel.",
+    "charLimit": 800
+  },
+  {
+    "date": "2025-05-21",
+    "title": "École",
+    "instructions": "Une sensation, une scène, un moment d'enfance.",
+    "charLimit": 1200
+  },
+  {
+    "date": "2025-05-22",
+    "title": "Merci",
+    "instructions": "En une phrase ou une lettre, dis merci.",
+    "charLimit": 300
+  },
+  {
+    "date": "2025-05-23",
+    "title": "Tendresse",
+    "instructions": "Écris un souvenir tendre, même tout petit.",
+    "charLimit": 600
+  },
+  {
+    "date": "2025-05-24",
+    "title": "Colère",
+    "instructions": "Exprime une émotion vive, sans filtre.",
+    "charLimit": 800
+  },
+  {
+    "date": "2025-05-25",
+    "title": "Silence",
+    "instructions": "Ce que l’on n’a jamais dit. Ce que tu ne diras peut-être jamais.",
+    "charLimit": 1000
+  },
+  {
+    "date": "2025-05-26",
+    "title": "Transmission",
+    "instructions": "Qu’est-ce que tu veux transmettre ?",
+    "charLimit": 1500
+  }
 ]

@@ -1,3 +1,5 @@
+import { supabase } from "./supabase"
+
 type Message = {
     date: string;
     pseudo: string;
@@ -16,5 +18,20 @@ type Message = {
   
   export function getAllMessages(): Message[] {
     return messages;
+  }
+  
+  export async function getMessagesByDate(date: string) {
+    const { data, error } = await supabase
+      .from("messages")
+      .select("*")
+      .eq("date", date)
+      .order("inserted_at", { ascending: true })
+  
+    if (error) {
+      console.error("Erreur chargement messages :", error)
+      return []
+    }
+  
+    return data
   }
   

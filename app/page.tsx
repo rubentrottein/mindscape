@@ -26,7 +26,7 @@ export default function Home() {
       <p className="text-gray-600 mb-6">
         Un thème, un temps court, un petit pas d’écriture.
         <br />
-        Tu peux écrire seul·e, ou à deux. Mais écris chaque jour.
+        Tu peux écrire vite, mal ou a peu près... Mais écris chaque jour!
       </p>
 
       <ThemeHeader theme={todayTheme} />

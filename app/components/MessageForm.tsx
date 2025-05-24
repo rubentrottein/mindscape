@@ -2,28 +2,51 @@
 // components/MessageForm.tsx
 import { useState } from "react"
 
+import { supabase } from "../lib/supabase"
+
 export default function MessageForm({
   charLimit,
   submitLabel = "Envoyer",
   onSubmit,
 }: {
   charLimit: number
-  onSubmit: (pseudo: string, message: string) => void
+  onSubmit: (date: string, pseudo: string, text: string) => void
   submitLabel?: string
 }) {
+  const [date, setDate] = useState("")
   const [pseudo, setPseudo] = useState("")
   const [message, setMessage] = useState("")
+  const today = new Date().toISOString().slice(0, 10);
 
+/* offline mockup submit
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
     if (message.length <= charLimit && pseudo) {
-      onSubmit(pseudo, message)
+      onSubmit(today, pseudo, message)
       setMessage("")
     }
   }
+*/
+  const handleSubmit = async (e: React.FormEvent, date: string, pseudo: string, text: string) => {
+    e.preventDefault();
+    console.log("Message envoyé :", { date, pseudo, text });
+    const { error } = await supabase.from("messages").insert([
+      {
+        //date du thème en cours (dynamique),
+        date,
+        pseudo,
+        text,
+      },
+    ])
+  
+    if (error) {
+      console.error("Erreur Supabase :", error)
+    }
+  }
+  
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-4 mb-8">
+    <form onSubmit={(e) => handleSubmit(e, today, pseudo, message)} className="space-y-4 mb-8">
       <input
         type="text"
         placeholder="Pseudo"
