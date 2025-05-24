@@ -27,7 +27,7 @@ export default function Home() {
       <a href="/">Retour à l'accueil</a>
       <ThemeHeader theme={todayTheme} />
       <MessageForm charLimit={todayTheme.charLimit} onSubmit={handleNewMessage} />
-      <MessageList messages={messages} />
+      <MessageList />
     </main>
   )
 }

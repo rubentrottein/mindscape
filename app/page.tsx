@@ -37,7 +37,7 @@ export default function Home() {
         submitLabel="Publier mon texte"
       />
 
-      <MessageList messages={messages} />
+      <MessageList />
     </main>
   )
 }
