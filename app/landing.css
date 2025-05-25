@@ -1,5 +1,6 @@
 body{
     background: url(https://picsum.photos/1920/1080) center center/cover no-repeat;
+    padding: 1em;
 }
 header{
     position: fixed;
@@ -14,8 +15,10 @@ header{
     backdrop-filter: blur(10px);
     font-family: var(--font-geist-sans);
 }
+header, .sidebar{
+    display: none;
+}
 .sidebar{
-    position: fixed;
     top: 0;
     left: 0;
     z-index: 100;
@@ -30,11 +33,42 @@ main{
     border-radius: 10px;
     padding: 20px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    width: 100%;
-    max-width: 1400px;
-    margin: 2em 2em auto 20em;
+    max-width: 100%;
+}
+.sidebar nav{
+    display: none;
+    flex-direction: column;
 }
 .music{
-    max-height: 80dvh;
+    position: sticky;
+    top: 0;
+    max-height: 100dvh;
     overflow-y: scroll;
 }
+.music iframe{
+    width: 100%;
+}
+@media (min-width: 1024px) {
+    body{
+        padding: 0;
+    }
+    main{
+        max-width: 1400px;
+        margin: 2em 2em auto 20em;
+    }
+    .music{
+        max-height: 80dvh;
+        overflow-y: scroll;
+    }
+    .sidebar{
+        position: fixed;
+        display: flex;
+        flex-direction: column;
+    }
+    .sidebar nav{
+        flex-direction: row;
+    }
+    header, .side{
+        display: flex;
+    }
+}   
