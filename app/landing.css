@@ -1,0 +1,40 @@
+body{
+    background: url(https://picsum.photos/1920/1080) center center/cover no-repeat;
+}
+header{
+    position: fixed;
+    top: 0;
+    right: 0;
+    font-size: 2em;
+    font-weight: 100;
+    color: lightcoral;
+    border-radius:0 0 0 10px;
+    z-index: 100;
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(10px);
+    font-family: var(--font-geist-sans);
+}
+.sidebar{
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    background: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(10px);
+    font-family: var(--font-geist-sans);
+    background: url(https://mistertea.fr/selene/img/abstract/1.jpg) center center/cover no-repeat;
+}
+main{
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 1400px;
+    margin: 2em 2em auto 20em;
+}
+.music{
+    max-height: 80dvh;
+    overflow-y: scroll;
+}

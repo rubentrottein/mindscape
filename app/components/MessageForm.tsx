@@ -18,18 +18,8 @@ export default function MessageForm({
   const [message, setMessage] = useState("")
   const today = new Date().toISOString().slice(0, 10);
 
-/* offline mockup submit
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
-    if (message.length <= charLimit && pseudo) {
-      onSubmit(today, pseudo, message)
-      setMessage("")
-    }
-  }
-*/
   const handleSubmit = async (e: React.FormEvent, date: string, pseudo: string, text: string) => {
-    e.preventDefault();
-    console.log("Message envoyé :", { date, pseudo, text });
+    //e.preventDefault();
     const { error } = await supabase.from("messages").insert([
       {
         //date du thème en cours (dynamique),
