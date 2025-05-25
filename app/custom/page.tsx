@@ -24,11 +24,10 @@ export default function Home() {
   }
 
   return (
-    <main className="max-w-2xl mx-auto p-6">
-      <h1>Customisation</h1>
-      <h2 className="text-2xl font-bold mb-4">📝 Ajout de nouveaux thèmes...</h2>
+    <section>
+      <h2 className="text-xl font-semibold mb-4">Ajouter un nouveau thème</h2>
       <ThemeForm onSubmit={handleNewTheme} />
-      <ThemeList />
-    </main>
+      <ThemeList showFutureThemes={true}/>
+    </section>
   )
 }

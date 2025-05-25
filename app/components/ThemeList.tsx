@@ -1,5 +1,5 @@
-// components/ThemeList.tsx
-'use client';
+// app/components/ThemeList.tsx
+'use client'
 
 import { useEffect, useState } from "react"
 import { supabase } from "../lib/supabase"
@@ -11,16 +11,21 @@ export type Theme = {
   charLimit: number
 }
 
-export default function ThemeList({
-    onSelect,
-    filter,
-    render
-  }: {
-    onSelect?: (theme: Theme) => void
-    filter?: (theme: Theme) => boolean
-    render?: (theme: Theme) => React.ReactNode
-  }) {
+type Message = {
+  id: number
+  pseudo: string
+  text: string
+  date: string
+}
+
+type ThemeListProps = {
+  showFutureThemes?: boolean
+}
+
+export default function ThemeList({ showFutureThemes = false }: ThemeListProps) {
   const [themes, setThemes] = useState<Theme[]>([])
+  const [messagesByDate, setMessagesByDate] = useState<Record<string, Message[]>>({})
+  const [filteredThemes, setFilteredThemes] = useState<Theme[]>([])
 
   useEffect(() => {
     const fetchThemes = async () => {
@@ -32,34 +37,81 @@ export default function ThemeList({
       if (error) {
         console.error("Erreur chargement des thèmes:", error.message)
       } else if (data) {
-        const filtered = filter ? data.filter(filter) : data
-        setThemes(filtered)
+        setThemes(data)
+        // Charger les messages pour chaque thème
+        data.forEach(theme => fetchMessagesForTheme(theme.date))
       }
     }
 
     fetchThemes()
-  }, [filter])
+  }, [])
+
+  // Filtrer les thèmes en fonction de showFutureThemes
+  useEffect(() => {
+    const today = new Date().toISOString().split('T')[0] // Format YYYY-MM-DD
+    
+    const filtered = showFutureThemes 
+      ? themes // Afficher tous les thèmes
+      : themes.filter(theme => theme.date <= today) // Uniquement les thèmes passés ou actuels
+      
+    setFilteredThemes(filtered)
+  }, [themes, showFutureThemes])
+
+  const fetchMessagesForTheme = async (date: string) => {
+    const { data, error } = await supabase
+      .from('messages')
+      .select('*')
+      .eq('date', date)
+      .order('inserted_at', { ascending: true })
+
+    if (!error && data) {
+      setMessagesByDate(prev => ({
+        ...prev,
+        [date]: data
+      }))
+    }
+  }
 
   return (
-    <div>
-      {themes.map((theme) => (
-        render ? render(theme) : (
-          <div key={theme.date} className="mb-6 border rounded p-4">
-            <h2 className="text-xl font-semibold">
-              📅 {theme.date} — <span className="italic">{theme.title}</span>
-            </h2>
-            <p className="text-sm italic mb-1">{theme.instructions}</p>
-            <p className="text-sm">Limite : {theme.charLimit} caractères</p>
-            {onSelect && (
-              <button
-                onClick={() => onSelect(theme)}
-                className="mt-2 px-3 py-1 bg-blue-500 text-white rounded hover:bg-blue-600"
-              >
-                Voir les messages
-              </button>
+    <div className="space-y-8 mt-8">
+      <h2 className="text-2xl font-bold mb-4">Thèmes existants</h2>
+      {filteredThemes.map((theme) => (
+        <div key={theme.date} className="border rounded-lg p-6 bg-white shadow">
+          <div className="flex justify-between items-start">
+            <div>
+              <h3 className="text-xl text-blue-600 font-semibold">
+                {new Date(theme.date).toLocaleDateString('fr-FR', { 
+                  weekday: 'long', 
+                  year: 'numeric', 
+                  month: 'long', 
+                  day: 'numeric' 
+                })}
+              </h3>
+              <h4 className="text-lg text-gray-700 mb-2">{theme.title}</h4>
+              <p className="text-gray-600 mb-2">{theme.instructions}</p>
+              <p className="text-sm text-gray-500">Limite : {theme.charLimit} caractères</p>
+            </div>
+          </div>
+
+          {/* Section des messages */}
+          <div className="mt-4 pt-4 border-t text-black">
+            <h4 className="font-bold mb-2">Textes ({messagesByDate[theme.date]?.length || 0})</h4>
+            {messagesByDate[theme.date]?.length > 0 ? (
+              <div className="space-y-3">
+                {messagesByDate[theme.date].map((message) => (
+                  <div key={message.id} className="bg-black text-white p-3 rounded">
+                    <div className="flex justify-between text-sm text-gray-500 mb-1">
+                      <span className="font-medium">{message.pseudo}</span>
+                    </div>
+                    <p className="whitespace-pre-line">{message.text}</p>
+                  </div>
+                ))}
+              </div>
+            ) : (
+              <p className="text-sm text-gray-500 italic">Aucun message pour ce thème.</p>
             )}
           </div>
-        )
+        </div>
       ))}
     </div>
   )

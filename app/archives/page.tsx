@@ -107,62 +107,7 @@ export default function Archives() {
       )}
 
       <ThemeList
-        filter={(theme) => new Date(theme.date) < new Date()}
-        onSelect={fetchMessagesForTheme}
-        render={(theme) => (
-          <div key={theme.date} className="mb-8">
-            <h2 className="text-xl font-semibold mb-2">
-              📅 {theme.date} — <span className="italic">{theme.title}</span>
-            </h2>
-            <i>{theme.instructions}</i>
-            <p>Limite : {theme.charLimit} caractères</p>
-
-            {messages[theme.date]?.length > 0 ? (
-              <ul className="space-y-4 mt-2">
-                {messages[theme.date].map((msg) => {
-                  const key = `${theme.date}-${msg.id}`
-                  const isEditing = editingMessage[key] !== undefined
-
-                  return (
-                    <li key={msg.id} className="border p-4 rounded">
-                      <p className="text-sm font-semibold">{msg.pseudo}</p>
-
-                      {isEditing ? (
-                        <>
-                          <textarea
-                            className="w-full border mt-2 p-2 rounded"
-                            value={editingMessage[key]}
-                            onChange={(e) => handleEditChange(key, e.target.value)}
-                          />
-                          <button
-                            onClick={() => handleSave(theme.date, msg.id)}
-                            className="mt-2 bg-green-600 text-white px-3 py-1 rounded hover:bg-green-700"
-                          >
-                            💾 Sauvegarder
-                          </button>
-                        </>
-                      ) : (
-                        <>
-                          <p className="mt-1 whitespace-pre-wrap">{msg.text}</p>
-                          {isAdmin && (
-                            <button
-                              onClick={() => handleEditClick(theme.date, msg.id, msg.text)}
-                              className="mt-2 text-sm text-blue-600 hover:underline"
-                            >
-                              ✏️ Modifier
-                            </button>
-                          )}
-                        </>
-                      )}
-                    </li>
-                  )
-                })}
-              </ul>
-            ) : (
-              <p className="text-gray-500 italic mt-2">Aucun message ce jour-là.</p>
-            )}
-          </div>
-        )}
+        showFutureThemes={false}
       />
     </>
   )
