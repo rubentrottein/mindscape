@@ -17,7 +17,7 @@ export default function Sidebar({ children }: { children: ReactNode }) {
   }
 
   return (
-    <div className="min-h-screen flex position-sticky top-0 z-50 side">
+    <div className="min-h-screen flex position-sticky top-0 z-50">
       <nav className="w-64 bg-purple-100 p-6 space-y-4 shadow-md sidebar">
         <h2 className="text-xl font-bold mb-6 text-red-400">📝 Écriture</h2>
         <ul className="space-y-2">

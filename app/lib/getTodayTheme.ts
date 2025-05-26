@@ -1,13 +1,19 @@
-import themes from '../data/themes.json';
+import { supabase } from './supabase'
+import { Theme } from '../types/Theme'
 
-export type Theme = {
-  date: string;
-  title: string;
-  instructions: string;
-  charLimit: number;
-};
+export async function getTodayTheme(): Promise<Theme | null> {
+  const today = new Date().toISOString().slice(0, 10)
 
-export function getTodayTheme(): Theme | null {
-  const today = new Date().toISOString().slice(0, 10);
-  return themes.find((t) => t.date === today) || null;
+  const { data, error } = await supabase
+    .from('themes')
+    .select('*')
+    .eq('date', today)
+    .single()
+
+  if (error) {
+    console.error('Erreur récupération thème du jour :', error.message)
+    return null
+  }
+
+  return data
 }

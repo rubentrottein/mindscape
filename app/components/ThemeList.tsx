@@ -4,19 +4,8 @@
 import { useEffect, useState } from "react"
 import { supabase } from "../lib/supabase"
 
-export type Theme = {
-  date: string
-  title: string
-  instructions: string
-  charLimit: number
-}
-
-type Message = {
-  id: number
-  pseudo: string
-  text: string
-  date: string
-}
+import { Theme } from "../types/Theme"
+import { Message } from "../types/Message"
 
 type ThemeListProps = {
   showFutureThemes?: boolean
@@ -79,7 +68,7 @@ export default function ThemeList({ showFutureThemes = false }: ThemeListProps) 
         <div key={theme.date} className="border rounded-lg p-6 bg-white shadow">
           <div className="flex justify-between items-start">
             <div>
-              <h3 className="text-xl text-blue-600 font-semibold">
+              <h3 className="text-xl text-green-600 font-semibold">
                 {new Date(theme.date).toLocaleDateString('fr-FR', { 
                   weekday: 'long', 
                   year: 'numeric', 

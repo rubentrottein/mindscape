@@ -1,22 +1,44 @@
 'use client';
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { getTodayTheme } from "./lib/getTodayTheme"
 import ThemeHeader from "./components/ThemeHeader"
 import MessageForm from "./components/MessageForm"
 import MessageList from "./components/MessageList"
-const todayTheme = getTodayTheme()
 
 export default function Home() {
   const [messages, setMessages] = useState<{ pseudo: string; content: string }[]>([])
+  const [todayTheme, setTodayTheme] = useState<{ charLimit: number } | null>(null)
+  const [isLoading, setIsLoading] = useState(true)
+  const [error, setError] = useState<string | null>(null)
 
-  if (!todayTheme) {
-    return <p className="p-4">Aucun thème pour aujourd’hui.</p>
-  }
+  useEffect(() => {
+    const fetchTodayTheme = async () => {
+      try {
+        const theme = await getTodayTheme()
+        setTodayTheme(theme)
+      } catch (err) {
+        setError('Failed to load today\'s theme')
+        console.error(err)
+      } finally {
+        setIsLoading(false)
+      }
+    }
+
+    fetchTodayTheme()
+  }, [])
 
   const handleNewMessage = (pseudo: string, message: string) => {
     const newMessage = { pseudo, content: message }
     setMessages((prev) => [...prev, newMessage])
+  }
+
+  if (isLoading) {
+    return <p className="p-4">Chargement du thème du jour...</p>
+  }
+
+  if (error) {
+    return <p className="p-4 text-red-500">{error}</p>
   }
 
   return (
@@ -31,10 +53,10 @@ export default function Home() {
             Tu peux écrire vite, mal ou a peu près... Mais écris!
           </p>
 
-          <ThemeHeader theme={todayTheme} />
+          <ThemeHeader />
 
           <MessageForm
-            charLimit={todayTheme.charLimit}
+            charLimit={todayTheme?.charLimit || 0}
             onSubmit={handleNewMessage}
             submitLabel="Publier mon texte"
           />

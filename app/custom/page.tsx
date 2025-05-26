@@ -2,9 +2,6 @@
 // pages/index.tsx
 import { useState } from "react"
 import { getTodayTheme } from "../lib/getTodayTheme"
-import ThemeHeader from "../components/ThemeHeader"
-import MessageForm from "../components/MessageForm"
-import MessageList from "../components/MessageList"
 import ThemeForm from "../components/ThemeForm"
 import ThemeList from "../components/ThemeList"
 

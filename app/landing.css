@@ -28,9 +28,10 @@ header, .sidebar{
     background: url(https://mistertea.fr/selene/img/abstract/1.jpg) center center/cover no-repeat;
 }
 main{
-    background: rgba(0, 0, 0, 0.4);
+    background: rgba(0, 0, 0, 0.6);
     backdrop-filter: blur(10px);
     border-radius: 10px;
+    color: white;
     padding: 20px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     max-width: 100%;
@@ -64,6 +65,7 @@ main{
         position: fixed;
         display: flex;
         flex-direction: column;
+        height: 100dvh;
     }
     .sidebar nav{
         flex-direction: row;

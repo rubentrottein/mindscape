@@ -2,7 +2,8 @@
 
 import { useEffect, useState } from 'react'
 import { supabase } from '../lib/supabase'
-import ThemeList, { Theme } from '../components/ThemeList'
+import ThemeList from '../components/ThemeList'
+import { Theme } from '../types/Theme'
 
 type Message = {
   id: number
