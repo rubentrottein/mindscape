@@ -64,8 +64,8 @@ export default function Home() {
           <MessageList />
         </section>
         <section className="space-y-4 music">
-          <h1 className="text-2xl font-bold mb-2">Bonne fête Maman 🎉</h1>
-          <p className="text-white-600 mb-6">J'espère que ça va te plaire et te motiver malgré tous ces mémoires à corriger...</p>
+          <h1 className="text-2xl font-bold mb-2">Bonne Anniversaire Maman 🎉</h1>
+          <p className="text-white-600 mb-6">Bienvenue sur ton MindScape 2.0 ! J'ai changé d'algorythme de définition des thèmes avec une IA nommée Claude ❤</p>
           <p>Amuse-toi bien et profite de la fête!</p>
           <div className="flex flex-col gap-6">
             <h2 className="text-xl font-bold mb-2">Playlists de travail : </h2>

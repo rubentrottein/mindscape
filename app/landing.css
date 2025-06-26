@@ -40,6 +40,21 @@ main{
     display: none;
     flex-direction: column;
 }
+.sidebar-element{
+    padding: .5em;
+    background: black;
+    border:gold 2px solid;
+    border-radius: 7px;
+    color: gold;
+    width: 90%;
+}
+.sidebar-element:hover, .sidebar-element a:hover{
+    background: gold;
+    color: black;
+}
+.sidebar-element a{
+    color: gold
+}
 .music{
     position: sticky;
     top: 0;
