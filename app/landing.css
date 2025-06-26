@@ -45,8 +45,7 @@ main{
     background: black;
     border:gold 2px solid;
     border-radius: 7px;
-    color: gold;
-    width: 90%;
+    color: white;
 }
 .sidebar-element:hover, .sidebar-element a:hover{
     background: gold;
@@ -81,9 +80,6 @@ main{
         display: flex;
         flex-direction: column;
         height: 100dvh;
-    }
-    .sidebar nav{
-        flex-direction: row;
     }
     header, .side{
         display: flex;

@@ -39,8 +39,8 @@ export default function Home() {
       </section>
 
       {/* Section écriture sur thème passé */}
-      <section className="space-y-6">
-        <CustomMessageForm onSubmit={handleNewCustomMessage} />
+      <section className="space-y-5 music">
+        <CustomMessageForm onSubmit={handleNewCustomMessage}/>
         
         {/* Affichage des messages récents (optionnel) */}
         {messages.length > 0 && (
@@ -48,7 +48,7 @@ export default function Home() {
             <h3 className="text-lg font-semibold mb-4">Messages récents ajoutés :</h3>
             <div className="space-y-2">
               {messages.slice(-5).map((msg, index) => (
-                <div key={index} className="p-3 bg-gray-100 rounded-md text-black">
+                <div key={index} className="p-3 bg-gray-100 rounded-md text-white">
                   <div className="flex justify-between items-start mb-2">
                     <strong>{msg.pseudo}</strong>
                     <span className="text-sm text-gray-500">{msg.date}</span>

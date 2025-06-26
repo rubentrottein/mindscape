@@ -64,11 +64,13 @@ export default function Home() {
           <MessageList />
         </section>
         <section className="space-y-4 music">
-          <h1 className="text-2xl font-bold mb-2">Bonne Anniversaire Maman 🎉</h1>
+          <h1 className="text-2xl font-bold mb-2">Heureux Anniversaire Maman 🎉</h1>
           <p className="text-white-600 mb-6">Bienvenue sur ton MindScape 2.0 ! J'ai changé d'algorythme de définition des thèmes avec une IA nommée Claude ❤</p>
           <p>Amuse-toi bien et profite de la fête!</p>
           <div className="flex flex-col gap-6">
             <h2 className="text-xl font-bold mb-2">Playlists de travail : </h2>
+            <h3>Classique : Valses de Chopin</h3>  
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/64B-gW9FtY8?si=2pHAX1eM0Vb9ca6u" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
             <h3>Néo-Classique : Clair-Obscur Expedition 33</h3>  
             <iframe width="560" height="315" src="https://www.youtube.com/embed/LAQZfeETFbg?si=ZVp0Pj4gLSnw0dzh" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
             <h3>Bebop : Jazz Noir</h3>  

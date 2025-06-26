@@ -107,10 +107,10 @@ export default function CustomMessageForm({ onSubmit }: CustomMessageFormProps) 
   }
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-6 w-full">
       <h2 className="text-xl font-bold">Écrire sur un thème passé</h2>
       
-      <form onSubmit={handleSubmit} className="space-y-4">
+      <form onSubmit={handleSubmit} className="space-y-4 w-120">
         {/* Sélection du thème */}
         <div>
           <label htmlFor="theme-select" className="block text-sm font-medium mb-2">
@@ -134,9 +134,9 @@ export default function CustomMessageForm({ onSubmit }: CustomMessageFormProps) 
 
         {/* Affichage du thème sélectionné */}
         {selectedTheme && (
-          <div className="p-4 bg-gray-100 rounded-md text-black">
+          <div className="p-4 bg-purple-600 rounded-md text-white">
             <h3 className="font-bold text-lg">{selectedTheme.title}</h3>
-            <p className="text-sm text-gray-600 mb-2">
+            <p className="text-sm text-orange-100 mb-2">
               {formatDate(selectedTheme.date)}
             </p>
             <p className="mb-2">{selectedTheme.instructions}</p>
@@ -156,7 +156,7 @@ export default function CustomMessageForm({ onSubmit }: CustomMessageFormProps) 
             id="pseudo"
             value={pseudo}
             onChange={(e) => setPseudo(e.target.value)}
-            className="w-full p-2 border rounded-md text-black"
+            className="w-full p-2 border rounded-md"
             placeholder="Votre pseudo"
             required
             maxLength={50}
@@ -172,7 +172,7 @@ export default function CustomMessageForm({ onSubmit }: CustomMessageFormProps) 
             id="content"
             value={content}
             onChange={(e) => setContent(e.target.value)}
-            className="w-full p-2 border rounded-md text-black"
+            className="w-full p-2 border rounded-md text-white"
             rows={6}
             placeholder="Écrivez votre texte ici..."
             required
