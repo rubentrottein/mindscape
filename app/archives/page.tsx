@@ -18,9 +18,27 @@ export default function Archives() {
   const [messages, setMessages] = useState<{ [date: string]: Message[] }>({})
   const [editingMessage, setEditingMessage] = useState<{ [key: string]: string }>({})
 
+  // Écouter les changements de stockage local pour détecter la connexion/déconnexion
   useEffect(() => {
+    const handleStorageChange = (e: StorageEvent) => {
+      if (e.key === 'isAdmin') {
+        setIsAdmin(e.newValue === 'true')
+      }
+    }
+
+    // Vérifier l'état initial
     const adminStatus = localStorage.getItem("isAdmin")
-    if (adminStatus === "true") setIsAdmin(true)
+    if (adminStatus === "true") {
+      setIsAdmin(true)
+    }
+
+    // Écouter les changements de stockage local
+    window.addEventListener('storage', handleStorageChange)
+
+    // Nettoyer l'écouteur d'événement
+    return () => {
+      window.removeEventListener('storage', handleStorageChange)
+    }
   }, [])
 
   const fetchMessagesForTheme = async (theme: Theme) => {
@@ -41,6 +59,8 @@ export default function Archives() {
       setIsAdmin(true)
       localStorage.setItem("isAdmin", "true")
       setPasswordInput("")
+      // Forcer le rechargement des données après la connexion
+      window.location.reload()
     } else {
       alert("Mot de passe incorrect")
     }

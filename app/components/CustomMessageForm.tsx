@@ -179,7 +179,7 @@ export default function CustomMessageForm({ onSubmit }: CustomMessageFormProps) 
             maxLength={selectedTheme?.charLimit || 1000}
           />
           {selectedTheme && (
-            <div className="text-sm text-gray-600 mt-1">
+            <div className="text-sm text-gray-200 mt-1">
               {content.length} / {selectedTheme.charLimit} caractères
               {content.length > selectedTheme.charLimit && (
                 <span className="text-red-500 ml-2">

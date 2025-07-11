@@ -51,7 +51,7 @@ export default function Home() {
                 <div key={index} className="p-3 bg-gray-100 rounded-md text-white">
                   <div className="flex justify-between items-start mb-2">
                     <strong>{msg.pseudo}</strong>
-                    <span className="text-sm text-gray-500">{msg.date}</span>
+                    <span className="text-sm text-gray-100">{msg.date}</span>
                   </div>
                   <p className="text-sm">{msg.content}</p>
                 </div>

@@ -46,10 +46,12 @@ main{
     border:gold 2px solid;
     border-radius: 7px;
     color: white;
+    transition: 0.3s;
 }
 .sidebar-element:hover, .sidebar-element a:hover{
     background: gold;
     color: black;
+    text-decoration: none;
 }
 .sidebar-element a{
     color: gold

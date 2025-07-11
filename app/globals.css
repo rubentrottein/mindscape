@@ -24,3 +24,7 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+.sidebar-element{
+    width: 100%;
+    display: block;
+}

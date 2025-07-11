@@ -32,19 +32,22 @@ export default function Sidebar({ children }: { children: ReactNode }) {
               <Link href="/archives#admin" className="text-green-400 hover:underline sidebar-element">🔐 Se connecter</Link>
             </li>
           ) : (
-            <li className="py-85 space-y-4">
-              <hr/>
-              <br />
+            <>
+              <li className="py-2">
+                <hr className="my-2 border-gray-300" />
+              </li>
               <li>
                 <Link href="/custom" className="text-green-400 hover:underline sidebar-element">Page Admin 1.0</Link>
               </li>
-              <button
-                onClick={handleLogout}
-                className="text-red-600 hover:underline sidebar-element"
-              >
-                🚪 Déconnexion
-              </button>
-            </li>
+              <li>
+                <button
+                  onClick={handleLogout}
+                  className="text-red-600 hover:underline sidebar-element"
+                >
+                  🚪 Déconnexion
+                </button>
+              </li>
+            </>
           )}
         </ul>
       </nav>
