@@ -1,4 +1,4 @@
-import themes from '../data/themes.json';
+import themes from '../../.backup/data/themes.example.json';
 
 export function getArchivedThemes(): typeof themes {
   const today = new Date().toISOString().slice(0, 10)

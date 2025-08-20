@@ -5,7 +5,7 @@ export async function getThemeByDate(date: string) {
     .from('themes')
     .select('*')
     .eq('date', date)
-    .single();  // if you expect only one theme per date
+    .single();
 
   if (error) {
     console.error("Error fetching theme:", error.message);
