@@ -1,10 +1,5 @@
 import { supabase } from "./supabase"
-
-type Message = {
-  date: string;
-  pseudo: string;
-  content: string;
-};
+import { Message } from "../types/Message";
 
 let messages: Message[] = [];
 

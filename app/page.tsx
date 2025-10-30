@@ -64,9 +64,13 @@ export default function Home() {
         <MessageList />
       </section>
       <section className="space-y-4 music">
-        <h1 className="text-2xl font-bold mb-2">Heureux Anniversaire Maman 🎉</h1>
-        <p className="text-white-600 mb-6">Bienvenue sur ton MindScape 2.0 ! J'ai changé d'algorythme de définition des thèmes avec une IA nommée Claude ❤</p>
-        <p>Amuse-toi bien et profite de la fête!</p>
+        <h1 className="text-2xl font-bold mb-2">Nouveautés de la version 3.0!</h1>
+        <ul>
+          <li className="text-white-600 mb-6">Ajout de thèmes suivis!
+            <p>Les thèmes suivis consistent a écrire sur une semaine consécutive une nouvelle complète</p>
+          </li>
+          <li>Amuse-toi bien!</li>
+        </ul>
         <div className="flex flex-col gap-6">
           <h2 className="text-xl font-bold mb-2">Playlists de travail : </h2>
           <h3>Classique : Valses de Chopin</h3>  

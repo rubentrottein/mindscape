@@ -32,7 +32,7 @@ for insert
 with check (true);
 
 
--- Thèmes de 1er Niveau (15)
+-- Thèmes de 1er Niveau (15) Mai 2025 - Juin 2025
 
 INSERT INTO themes (date, title, instructions, "charLimit") VALUES
   ('2025-05-24', 'Premier mot', 'Écrivez un mot pour commencer.', 500),
@@ -134,3 +134,36 @@ INSERT INTO themes (date, title, instructions, "charLimit") VALUES
 ('2025-08-24', 'L''inventeur de métaphores', 'Votre personnage a le don de créer des métaphores si parfaites qu''elles deviennent réalité. Attention aux conséquences !', 470),
 ('2025-08-25', 'Le gardien des souvenirs perdus', 'Quelqu''un collecte les souvenirs que les gens oublient. Dans son entrepôt, que découvre votre protagoniste ?', 520),
 ('2025-08-26', 'Épilogue d''une vie ordinaire', 'Racontez les dernières pensées d''un personnage à la fin d''une vie simple mais riche de petits bonheurs.', 350);
+
+-- Thèmes d'écriture pour septembre 2025
+INSERT INTO themes (date, title, instructions, "charLimit") VALUES
+('2025-08-27', 'Trois couleurs', 'Écrivez un texte où dominent trois couleurs précises (au choix). Elles doivent structurer votre récit.', 380),
+('2025-08-28', 'Journal du futur', 'Rédigez une page de journal intime datée dans 20 ans. Qu’écrit votre personnage ?', 420),
+('2025-08-29', 'La rumeur', 'Décrivez une rumeur qui circule dans une ville ou une école. Montrez comment elle se transforme.', 450),
+('2025-08-30', 'Le rêve inversé', 'Un personnage vit une journée normale... sauf qu’il se rend compte qu’il est le rêve de quelqu’un d’autre.', 480),
+('2025-08-31', 'Inventaire poétique', 'Écrivez une liste poétique d’objets, comme un inventaire de sac, de chambre ou de mémoire.', 320),
+('2025-09-01', 'Le faux souvenir', 'Votre narrateur raconte un souvenir très précis... mais qui n’a jamais existé.', 400),
+('2025-09-02', 'Dialogue impossible', 'Faites dialoguer deux personnages qui ne devraient jamais se rencontrer (ex : un arbre et un astronaute).', 440),
+('2025-09-03', 'Avis de recherche', 'Rédigez un avis de recherche pour un personnage ou un sentiment disparu.', 300),
+('2025-09-04', 'Version minuscule', 'Écrivez un texte sans utiliser de majuscules ni de noms propres. Le ton doit rester littéraire.', 260),
+('2025-09-05', 'La répétition', 'Construisez un récit où une phrase ou un mot revient plusieurs fois, comme un refrain obsédant.', 350),
+('2025-09-06', 'La lettre croisée', 'Écrivez deux lettres opposées : l’une envoyée, l’autre jamais envoyée. Les deux doivent dialoguer.', 500),
+('2025-09-07', 'Un jour sans fin', 'Votre protagoniste revit la même journée en boucle. Montrez deux versions différentes.', 470),
+('2025-09-08', 'L’annonce', 'Rédigez une annonce (petite annonce, nécrologie, publicité) qui cache une vraie histoire derrière ses mots.', 280),
+('2025-09-09', 'Le conte détourné', 'Reprenez un conte classique mais donnez-lui une forme moderne, urbaine ou décalée.', 430),
+('2025-09-10', 'Le silence des mots', 'Écrivez un texte avec le moins de dialogues possible, mais qui donne pourtant l’impression qu’on a beaucoup parlé.', 460),
+('2025-09-11', 'L’interrupteur', 'Votre protagoniste découvre un interrupteur mystérieux. À quoi sert-il ? Ose-t-il l’utiliser ?', 390),
+('2025-09-12', 'Phrase unique', 'Composez une histoire complète en une seule phrase très longue, avec un rythme fluide.', 200),
+('2025-09-13', 'Le témoin', 'Un personnage raconte une scène dont il n’a pas été l’acteur, mais seulement le témoin discret.', 420),
+('2025-09-14', 'Les consignes', 'Rédigez un texte où la narration ressemble à un mode d’emploi ou des instructions officielles.', 340),
+('2025-09-15', 'Portrait en cinq sens', 'Décrivez un personnage uniquement par ce qu’il voit, sent, entend, touche et goûte.', 500),
+('2025-09-16', 'Le mot interdit', 'Écrivez un texte où un mot précis (au choix) ne peut jamais apparaître, mais où tout le récit tourne autour de lui.', 360),
+('2025-09-17', 'Chanson écrite', 'Imaginez les paroles d’une chanson inventée. Le ton peut être poétique, humoristique ou dramatique.', 300),
+('2025-09-18', 'La ville imaginaire', 'Inventez une ville où une règle étrange régit la vie quotidienne. Décrivez-la à travers une balade.', 470),
+('2025-09-19', 'Deux versions', 'Racontez la même scène du point de vue de deux personnages différents.', 500),
+('2025-09-20', 'Les marges', 'Écrivez le commentaire qu’un lecteur aurait pu griffonner en marge d’un vieux livre.', 280),
+('2025-09-21', 'Souvenir collectif', 'Écrivez un souvenir raconté à plusieurs voix, comme si un groupe entier parlait en même temps.', 440),
+('2025-09-22', 'Le message codé', 'Votre protagoniste découvre un message crypté. Reconstituez-le et imaginez sa signification.', 360),
+('2025-09-23', 'Le corps qui parle', 'Décrivez une scène où les gestes, postures et silences comptent plus que les paroles.', 420),
+('2025-09-24', 'Récit météorologique', 'Écrivez un texte où la météo est le narrateur et raconte ce qu’elle voit.', 380),
+('2025-09-25', 'L’inachevé', 'Rédigez un texte qui s’interrompt volontairement au moment le plus crucial.', 260);
